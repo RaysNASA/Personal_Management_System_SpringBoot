@@ -17,47 +17,203 @@
     <properties>
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
+<!--SpringBoot相关-->
+        <!--
+        这个依赖是用于在Spring Boot应用程序中添加安全功能的。它包含Spring Security框架的核心库和一些常用的安全依赖项。
+        Spring Security是一个功能强大的安全框架，可用于保护应用程序免受各种攻击，例如身份验证、授权和攻击防护等。
+        这个依赖还包含了一些默认的安全配置，可以快速地启用基本的安全保护措施。
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
+        <!--
+        这个依赖是用于在Spring Boot应用程序中添加Web功能的。它包含Spring Web MVC框架的核心库和一些常用的Web依赖项。
+        Spring Web MVC是一个基于模型-视图-控制器（MVC）模式的Web框架，可以用于构建各种Web应用程序，包括RESTful API和基于浏览器的Web应用程序。
+        这个依赖还包含了一些默认的Web配置，可以快速地启用基本的Web功能，例如嵌入式Tomcat服务器和静态资源处理。
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--
+        这个依赖是用于在Spring Boot应用程序中添加开发工具的。它包含了一些常用的开发工具，例如自动重启、热部署和自动配置等。
+        这些工具可以提高开发人员的工作效率和开发体验。在开发阶段，这个依赖可以自动检测应用程序的变化并自动重启应用程序，以便快速地反映出代码的变化。
+        同时，这个依赖还可以通过监视classpath路径中的文件变化来实现热部署。这个依赖只在开发环境中使用，因此它的scope被设置为runtime，optional为true表示这个依赖是可选的。
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
+
+<!--测试方面的-->
+        <!--
+         一个测试框架的Maven坐标，用于在Spring Boot应用程序中进行单元测试和集成测试。
+         它的groupId为org.springframework.boot，artifactId为spring-boot-starter-test，scope为test表示这个依赖只在测试阶段使用。
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--
+        一个Spring Security测试框架的Maven坐标，用于在Spring Boot应用程序中进行Spring Security的单元测试和集成测试。
+        它的groupId为org.springframework.security，artifactId为spring-security-test，scope为test表示这个依赖只在测试阶段使用。
+        -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--
+        这个依赖是Spring Framework提供的一个测试框架，用于编写单元测试和集成测试。
+        它的groupId为org.springframework，artifactId为spring-test，version为5.3.8，表示使用Spring Framework的测试框架的5.3.8版本。
+        在编写Spring应用程序的测试用例时，可以使用Spring Test框架提供的Mock对象、测试注解、Web测试支持等功能，来简化测试代码的编写和执行。
+        Spring Test框架还提供了一个SpringApplicationConfiguration注解，用于在测试环境中加载Spring应用程序的配置。
+        同时，它也提供了一个SpringRunner类，用于运行JUnit测试，并在测试运行之前自动创建和加载Spring应用程序上下文。
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+
+<!--Spring MVC相关-->
+        <!--
+        这个依赖是Java Servlet API的实现，它提供了一组Java接口，用于编写基于Servlet技术的Web应用程序。
+        Servlet是在Web服务器上运行的Java程序，可以处理HTTP请求和响应。这个依赖提供了Servlet API的类和接口，可以用于开发Servlet程序。
+        它的groupId为javax.servlet，artifactId为javax.servlet-api，version为3.1.0表示它实现了Servlet API 3.1.0规范。
+        这个依赖通常被Web应用程序使用，并且在Web服务器的类路径上可用。
+        在使用这个依赖时，还需要将其作为编译时依赖项进行引入。
+        -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+        <!--
+        这个依赖提供了JavaServer Pages（JSP）的API实现。
+        JSP是一种基于Java的服务器端页面技术，它可以在Web服务器上生成动态Web页面。
+        这个依赖的groupId为javax.servlet.jsp，artifactId为jsp-api，version为2.2表示它实现了JSP 2.2规范的API。
+        JSP API定义了一组Java类和接口，可以在JSP页面中使用，包括JSP标签库、EL表达式和页面生命周期管理等。
+        这个依赖通常被Web应用程序使用，并且在Web服务器的类路径上可用。
+        在使用这个依赖时，还需要将其作为编译时依赖项进行引入。
+        -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <!--
+        这个依赖是JSP标准标签库（JSTL）的实现，它提供了一组标签和函数，可以用于简化JSP页面的开发。
+        JSTL是一组标准的JSP标签，可以在JSP页面中使用，以便执行常见的Web开发任务，例如迭代集合、格式化数据和控制流程等。
+        这个依赖的groupId为jstl，artifactId为jstl，version为1.2表示它实现了JSTL 1.2规范。
+        这个依赖通常被Web应用程序使用，并且在Web服务器的类路径上可用。
+        在使用这个依赖时，还需要将其作为编译时依赖项进行引入。
+        -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+<!--Spring框架相关-->
+        <!--
+        这个依赖是用于AOP编程的Maven坐标。
+        它的groupId为org.aspectj，artifactId为aspectjweaver，version为1.9.6，表示使用AspectJ的weaver模块的1.9.6版本。
+        AspectJ是一个Java AOP框架，通过AOP技术可以在不修改原有代码的情况下，动态地为应用程序添加新的功能，如事务、安全性、日志记录等。
+        aspectjweaver是AspectJ的一个核心模块，它提供了实现AOP功能所需的核心类和方法。
+        在使用AspectJ框架时，需要在应用程序中添加aspectjweaver依赖，并编写AspectJ切面，以便在应用程序中实现AOP编程。
+        -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.19</version>
+        </dependency>
+
+<!--数据库的内容-->
+        <!--
+        mysql-connector-j: 一个MySQL JDBC驱动程序的Maven坐标，用于在Java应用程序中连接MySQL数据库。
+        它的groupId为com.mysql，artifactId为mysql-connector-j，scope为runtime表示在运行时需要该依赖。
+        -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--
+        一个JDBC连接池和监控框架的Maven坐标，用于在Java应用程序中实现数据库连接池的功能。
+        它的groupId为com.alibaba，artifactId为druid，version为1.2.16表示它是Druid 1.2.16版本的库。
+        通过在Java应用程序中引入这个依赖，可以在程序中使用Druid提供的数据库连接池，从而提高程序的数据库访问性能和并发能力。
+        -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+
+        <!--
+        一个Java库，用于简化Java开发中的一些重复性工作，例如getter和setter方法的生成、构造方法的生成等。
+        它的groupId为org.projectlombok，artifactId为lombok，optional为true表示这个依赖是可选的，即开发者可以选择是否使用它。
+        通过在Java应用程序中引入这个依赖，可以使用Lombok提供的注解来简化Java类的编写，减少重复性代码的编写。
+        -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+<!--中间件-->
+        <!--
+        一个Tomcat嵌入式服务器的Maven坐标，用于在Java应用程序中启动一个嵌入式Tomcat服务器。
+        它的groupId为org.springframework.boot，artifactId为spring-boot-starter-tomcat，scope为provided表示这个依赖由目标环境提供，不需要在编译和打包时包含该依赖。
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--
+        这个依赖是PageHelper分页插件的Maven坐标，用于在Java应用程序中引入PageHelper库。
+        它的groupId为com.github.pagehelper，artifactId为pagehelper，version为5.3.2表示它是PageHelper 5.3.2版本的库。
+        PageHelper是一个基于MyBatis的分页插件，可以在MyBatis查询中实现分页功能。
+        通过在Java应用程序中引入这个依赖，可以在MyBatis的配置文件中配置PageHelper，并在MyBatis查询中使用PageHelper提供的分页功能。
+        这个依赖通常被用于Java应用程序的分页查询功能的开发。
+        在使用这个依赖时，需要将其添加到项目的pom.xml文件中，并通过Maven进行依赖管理。
+        -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.3.2</version>
+        </dependency>
+
+        <!--
+        这个依赖是Hibernate Validator的Maven坐标，用于在Java应用程序中引入Hibernate Validator库。
+        它的groupId为org.hibernate.validator，artifactId为hibernate-validator，version为8.0.0.Final表示它是Hibernate Validator 8.0.0版本的库。
+        Hibernate Validator是一个JavaBean验证框架，用于验证JavaBean是否符合指定的规则。
+        它支持基于注释和基于XML配置的验证规则，并提供了多种内置的验证器，例如字符串长度、电子邮件格式、日期格式、数字范围等。
+        通过在Java应用程序中引入这个依赖，可以在JavaBean上添加验证规则，并在运行时自动验证JavaBean是否符合规则。
+        这个依赖通常被用于Java应用程序的输入验证功能的开发。
+        -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.0.Final</version>
+        </dependency>
+
     </dependencies>
 
     <build>
