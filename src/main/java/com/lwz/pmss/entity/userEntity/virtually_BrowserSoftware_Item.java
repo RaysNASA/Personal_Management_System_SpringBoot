@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class virtually_BrowserSoftware_Item {
-    int BSid;  //平台和软件的唯一识别码
+    int BSID;  //平台和软件的唯一识别码
 
     String name;  //名称
 
@@ -16,7 +16,7 @@ public class virtually_BrowserSoftware_Item {
 
     String password;  //密码
 
-    int Uid;  //用户名
+    int UID;  //用户名
 
     Date register_date;  //注册日期
 

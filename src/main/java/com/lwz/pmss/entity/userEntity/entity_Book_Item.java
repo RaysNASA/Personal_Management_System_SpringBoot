@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class entity_Book_Item {
-    int Bid;  //实体图书唯一识别码
+    int BID;  //实体图书唯一识别码
 
     String book_name;  //图书名
 
@@ -14,7 +14,7 @@ public class entity_Book_Item {
 
     String book_type;  //图书类型
 
-    int Uid;  //用户名
+    int UID;  //用户名
 
     Date purchase_date;  //购买日期
 

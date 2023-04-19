@@ -7,7 +7,7 @@ public class invest_List {
     * 可变
     * 该列表内容是交易明细表
     * */
-    int IVid;  //交易唯一识别码
+    int IVID;  //交易唯一识别码
 
     String item;  //交易项目名
 

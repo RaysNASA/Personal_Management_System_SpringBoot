@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class virtually_ViewMovies_Item {
-    int Vid;  //影视唯一识别码
+    int VID;  //影视唯一识别码
 
     String movies_name;  //影视名
 
@@ -14,7 +14,7 @@ public class virtually_ViewMovies_Item {
 
     String main_performer;  //主要演员
 
-    int Uid;  //用户名
+    int UID;  //用户名
 
     Date in_date;  //收入日期
 

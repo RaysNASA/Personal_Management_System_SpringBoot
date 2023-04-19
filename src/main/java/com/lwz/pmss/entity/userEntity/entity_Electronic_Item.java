@@ -6,13 +6,13 @@ import java.util.Date;
 
 @Data
 public class entity_Electronic_Item {
-    int Eid;  //电子产品唯一识别码
+    int EID;  //电子产品唯一识别码
 
     String brand;  //品牌名
 
     String item_name;  //产品名
 
-    int Uid;  //用户名
+    int UID;  //用户名
 
     Date purchase_date;  //购买日期
 

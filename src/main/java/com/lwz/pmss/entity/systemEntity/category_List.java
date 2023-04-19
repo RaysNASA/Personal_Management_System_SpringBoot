@@ -8,7 +8,7 @@ public class category_List {
     * 可变
     * 该列表的内容是Cid对应的cate_name和is_entity:cid-7个userEntity中的分类表名-0或1
     * */
-    int Cid;  //大分类的唯一识别码
+    int CID;  //大分类的唯一识别码
 
     String cate_name;  //分类名
 

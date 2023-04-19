@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class virtually_ElectronicBook_Item {
-    int EBid;  //电子资料唯一识别码
+    int EBID;  //电子资料唯一识别码
 
     String book_name;  //资料名
 
@@ -14,7 +14,7 @@ public class virtually_ElectronicBook_Item {
 
     String browser_name;  //平台名
 
-    int Uid;  //用户名
+    int UID;  //用户名
 
     Date purchase_date;  //购买日期
 
